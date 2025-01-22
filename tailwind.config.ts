@@ -9,8 +9,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#F07D00",
+        secondary: "#234B64",
+        tertiary: "#FFF1C3",
+      },
+      fontFamily: {
+        nunito: ['"Nunito"', "sans-serif"],
+        caveat: ['"Caveat"', "serif"],
+      },
+      maxWidth: {
+        '8xl': '86.875rem',
       },
     },
   },
