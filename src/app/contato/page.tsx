@@ -1,8 +1,9 @@
+
 export default function Contato() {
   return (
     <div>
       <section className="contatoPagina max-md:pb-16 py-32">
-        <div className="innerWidth max-w-8xl max-md:flex-col flex items-center justify-between px-4 mx-auto">
+        <div className="innerWidth max-w-8xl max-md:flex-col flex items-center justify-between gap-8 px-4 mx-auto">
           <div className="contatoConteudo w-full flex flex-col gap-12">
             <div className="flex flex-col gap-6">
               <h2 className="text-primary max-md:text-3xl max-md:text-center font-caveat text-5xl font-bold">Entre em contato com nossa equipe</h2>
@@ -61,7 +62,51 @@ export default function Contato() {
             </div>
           </div>
           <div className="w-full">
-
+            <form className="w-full bg-tertiary shadow-lg rounded-lg p-8">
+              <div className="mb-4">
+                <label htmlFor="nome" className="block text-secondary font-medium mb-2">Nome</label>
+                <input
+                  type="text"
+                  id="nome"
+                  placeholder="Digite o seu nome"
+                  className="w-full border border-secondary rounded-lg bg-transparent text-secondary placeholder-secondary px-4 py-3"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-secondary font-medium mb-2">E-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Digite o seu e-mail"
+                  className="w-full border border-secondary rounded-lg bg-transparent text-secondary placeholder-secondary px-4 py-3"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="assunto" className="block text-secondary font-medium mb-2">Assunto</label>
+                <input
+                  type="text"
+                  id="assunto"
+                  placeholder="Qual seria o assunto?"
+                  className="w-full border border-secondary rounded-lg bg-transparent text-secondary placeholder-secondary px-4 py-3"
+                />
+              </div>
+              <div className="mb-4">
+                <label htmlFor="mensagem" className="block text-secondary font-medium mb-2">Mensagem</label>
+                <textarea
+                  id="mensagem"
+                  placeholder="Digite uma mensagem para nós!"
+                  className="w-full border border-secondary rounded-lg bg-transparent text-secondary placeholder-secondary px-4 py-3 min-h-[104px]"
+                ></textarea>
+              </div>
+              <div className="flex justify-end">
+                <button
+                  type="submit"
+                  className="w-full bg-primary text-tertiary rounded-lg px-6 py-3 font-medium hover:opacity-90"
+                >
+                  Enviar
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </section>
