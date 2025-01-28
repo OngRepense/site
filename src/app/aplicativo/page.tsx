@@ -31,7 +31,7 @@ export default function Aplicativo() {
             <div className="projeto w-full flex max-md:flex-col md:gap-8">
               <div className="projetoCard min-h-[300px] max-md:rounded-lg w-full flex flex-col gap-8 md:rounded-3xl bg-primary overflow-hidden max-md:p-4 p-8 relative">
                 <div className="flex flex-col gap-4">
-                  <h3 className="max-md:text-2xl text-3xl font-bold font-caveat">Inscreva-se para a nossa banca comunitária!</h3>
+                  <h3 className="max-md:text-2xl text-3xl font-bold font-caveat">Reforço escolar comunitário</h3>
                   <p className="max-md:text-xs text-base">Oferecemos um espaço acolhedor onde as crianças podem passar o tempo com atividades educativas, recreativas e de integração social. Um ambiente seguro e divertido para aprender e crescer.</p>
                 </div>
                 <Image className="absolute max-md:w-[166px] bottom-[-62px] right-[-10px]" src="/assets/images/phone01.png" alt="Aplicativo Repense" width={430} height={600} loading="lazy" />

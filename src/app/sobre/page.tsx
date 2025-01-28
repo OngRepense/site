@@ -77,7 +77,7 @@ export default function Sobre() {
             <button className="w-fit bg-primary flex items-center justify-center gap-4 rounded hover:bg-opacity-85 duration-300 ease-in-out py-3 px-6">
               <span>Entrar para o time</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
-                <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
           </div>

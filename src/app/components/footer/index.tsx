@@ -8,7 +8,7 @@ export function Footer() {
                 <div className="max-md:flex-col w-full flex justify-between gap-8">
                     <div className="max-md:max-w-full max-md:items-center max-w-[332px] flex flex-col gap-4">
                         <Image src="/assets/icons/repenseLogoAzul.svg" alt="Logo Repense" width={222} height={50} loading="lazy" />
-                        <p className="max-md:text-center text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et..</p>
+                        <p className="max-md:text-center text-base">Transformando vidas por meio da educação e oportunidades. Junte-se a nós nessa missão!</p>
                     </div>
                     <div className="max-md:justify-center flex gap-8">
                         <div className="flex flex-col gap-4">

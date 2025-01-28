@@ -44,7 +44,7 @@ export default function Home() {
             <button className="group w-fit border-2 border-primary flex items-center justify-center gap-4 text-primary font-bold rounded hover:bg-primary hover:text-tertiary duration-300 ease-in-out py-3 px-6">
               <span>Saiba mais</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
-                <path className="group-hover:fill-tertiary group-hover:stroke-tertiary" d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#F07D00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path className="group-hover:fill-tertiary group-hover:stroke-tertiary" d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#F07D00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
           </div>
@@ -59,7 +59,7 @@ export default function Home() {
           <button className="w-fit bg-primary flex items-center justify-center gap-4 rounded hover:bg-opacity-85 duration-300 ease-in-out py-3 px-6">
             <span>Saiba mais</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
-              <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
         </div>
@@ -74,13 +74,13 @@ export default function Home() {
               </div>
               <div className="projetoCard max-md:rounded-b-lg md:max-w-[384px] w-full flex flex-col gap-8 md:rounded-3xl bg-primary overflow-hidden max-md:p-4 p-8">
                 <div className="flex flex-col gap-4">
-                  <h3 className="max-md:text-2xl text-3xl font-bold font-caveat">Inscreva-se para a nossa banca comunitária!</h3>
+                  <h3 className="max-md:text-2xl text-3xl font-bold font-caveat">Reforço escolar comunitário</h3>
                   <p className="max-md:text-xs text-base">Oferecemos um espaço acolhedor onde as crianças podem passar o tempo com atividades educativas, recreativas e de integração social. Um ambiente seguro e divertido para aprender e crescer.</p>
                 </div>
                 <Link href="#" className="flex items-center gap-2">
                   <span className="font-medium">Saiba mais</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
-                    <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>  
                 </Link>
               </div>
@@ -94,7 +94,7 @@ export default function Home() {
                 <Link href="#" className="flex items-center gap-2">
                   <span className="font-medium text-secondary">Saiba mais</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
-                    <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#234B64" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#234B64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>  
                 </Link>
               </div>
@@ -114,7 +114,7 @@ export default function Home() {
                 <Link href="#" className="flex items-center gap-2">
                   <span className="font-medium">Saiba mais</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
-                    <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>  
                 </Link>
               </div>
@@ -158,7 +158,7 @@ export default function Home() {
           <button className="w-fit bg-primary flex items-center justify-center gap-4 rounded hover:bg-opacity-85 duration-300 ease-in-out py-3 px-6">
             <span>Entre em contato</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
-              <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
         </div>

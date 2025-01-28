@@ -40,7 +40,7 @@ export default function Contato() {
                 </div>
                 <div>
                   <h3 className="max-md:text-base text-primary text-2xl font-bold">Localização</h3>
-                  <p className="max-md:text-sm text-base">Av. Exemplo Endereço, 390, Jardim Exemplo - ET CEP: 0000-000</p>
+                  <p className="max-md:text-sm text-base">Av Luís Viana, 13223, Hangar Business Park, Torre 01 sala 313</p>
                 </div>
               </div>
             </div>
