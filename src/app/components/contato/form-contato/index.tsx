@@ -17,13 +17,20 @@ const FormContato: FC = () => {
 
   async function onSubmit(data: ContatoFormData) {
     try {
-      await sendEmail(data);
+      const formData = new FormData();
+      formData.append("nome", data.nome);
+      formData.append("email", data.email);
+      formData.append("assunto", data.assunto);
+      formData.append("mensagem", data.mensagem);
+  
+      await sendEmail(formData);
       setFeedback("Email enviado com sucesso!");
     } catch (error) {
       console.error("Erro ao enviar e-mail:", error);
       setFeedback("Ocorreu um erro ao enviar o email. Tente novamente.");
     }
-  }  
+  }
+  
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full bg-tertiary shadow-lg rounded-lg p-8">
