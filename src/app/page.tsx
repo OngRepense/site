@@ -1,15 +1,16 @@
-import { Metadata } from "next";
+"use client";
+
 import Image from 'next/image';
 import Link from "next/link";
+import Autoplay from "embla-carousel-autoplay";
 
-export const metadata: Metadata = {
-  title: "Home - Repense",
-  description: "Conheça a ONG Repense e descubra como conectamos pessoas a oportunidades por meio da educação e empregabilidade.",
-  openGraph: {
-    title: "ONG Repense - Educação e Oportunidades",
-    description: "Transformamos vidas através da capacitação profissional e divulgação de vagas de emprego.",
-  }
-}
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 export default function Home() {
   return (
@@ -41,12 +42,12 @@ export default function Home() {
               <h2 className="text-primary max-md:text-3xl max-md:text-center font-caveat text-6xl font-bold">Sobre nós</h2>
               <p className="max-md:text-sm max-md:text-center text-xl">Nosso objetivo é bem simples: FAZER A DIFERENÇA NA VIDA DAS PESSOAS. Por isso decidimos constituir a Repense, uma ONG que visa capacitar pessoas, conectando pessoas.</p>
             </div>
-            <button className="group w-fit border-2 border-primary flex items-center justify-center gap-4 text-primary font-bold rounded hover:bg-primary hover:text-tertiary duration-300 ease-in-out py-3 px-6">
+            <Link href="/sobre" className="group w-fit border-2 border-primary flex items-center justify-center gap-4 text-primary font-bold rounded hover:bg-primary hover:text-tertiary duration-300 ease-in-out py-3 px-6">
               <span>Saiba mais</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
                 <path className="group-hover:fill-tertiary group-hover:stroke-tertiary" d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#F07D00" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -56,12 +57,12 @@ export default function Home() {
             <h2 className="text-primary max-md:text-3xl max-md:text-center font-caveat text-6xl text-secondary font-bold">Confira nosso blog</h2>
             <p className="max-md:text-sm text-center text-xl text-secondary">Explore conteúdos inspiradores e dicas práticas para transformar sua vida profissional. Descubra histórias, tendências e muito mais!</p>
           </div>
-          <button className="w-fit bg-primary flex items-center justify-center gap-4 rounded hover:bg-opacity-85 duration-300 ease-in-out py-3 px-6">
+          <Link href="/blog" className="w-fit bg-primary flex items-center justify-center gap-4 rounded hover:bg-opacity-85 duration-300 ease-in-out py-3 px-6">
             <span>Saiba mais</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
               <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </button>
+          </Link>
         </div>
       </section>
       <section className="oqueFazemosHome max-md:py-16 py-32">
@@ -139,28 +140,53 @@ export default function Home() {
       <section className="parceriasHome max-md:py-16 py-32">
         <div className="innerWidth max-w-8xl flex flex-col items-center justify-center gap-16 px-4 mx-auto">
           <h2 className="text-tertiary max-md:text-3xl max-md:text-center font-caveat text-6xl font-bold">Parcerias que nos orgulhamos</h2>
-          <div className="parceriasContainer w-full flex max-md:gap-4 gap-8">
-            <div className="parceriaItem w-full bg-[rgba(240,125,0,0.50)] flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
-              <Image className="max-w-[100px] max-h-[100px] w-full" src="/assets/images/googleIcon.png" alt="Parceria" width={100} height={100} loading="lazy" />
-            </div>
-            <div className="parceriaItem w-full bg-[rgba(240,125,0,0.50)] flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
-              <Image className="max-w-[100px] max-h-[100px] w-full" src="/assets/images/itauLogo.png" alt="Parceria" width={100} height={100} loading="lazy" />
-            </div>
-            <div className="parceriaItem w-full bg-[rgba(240,125,0,0.50)] flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
-              <Image className="max-w-[100px] max-h-[100px] w-full" src="/assets/images/santanderLogo.png" alt="Parceria" width={100} height={100} loading="lazy" />
-            </div>
+          <div className="parceriasContainer w-full">
+            <Carousel opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 2000,
+                }),
+              ]}
+              className='max-md:rounded-lg md:rounded-3xl overflow-hidden'
+            >
+              <CarouselContent>
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <div className="parceriaItem w-full bg-[rgba(240,125,0,0.50)] flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
+                    <Image className="max-w-[100px] max-h-[100px] w-full" src="/assets/images/googleIcon.png" alt="Parceria" width={100} height={100} loading="lazy" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <div className="parceriaItem w-full bg-[rgba(240,125,0,0.50)] flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
+                    <Image className="max-w-[100px] max-h-[100px] w-full" src="/assets/images/itauLogo.png" alt="Parceria" width={100} height={100} loading="lazy" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <div className="parceriaItem w-full bg-[rgba(240,125,0,0.50)] flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
+                    <Image className="max-w-[100px] max-h-[100px] w-full" src="/assets/images/santanderLogo.png" alt="Parceria" width={100} height={100} loading="lazy" />
+                  </div>
+                </CarouselItem>
+                <CarouselItem className="md:basis-1/2 lg:basis-1/3">
+                  <div className="parceriaItem w-full bg-[rgba(240,125,0,0.50)] flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
+                    <Image className="max-w-[100px] max-h-[100px] w-full" src="/assets/images/santanderLogo.png" alt="Parceria" width={100} height={100} loading="lazy" />
+                  </div>
+                </CarouselItem>
+              </CarouselContent>
+            </Carousel>
           </div>
         </div>
       </section>
       <section className="contatoHome py-16">
         <div className="innerWidth max-w-8xl flex flex-col items-center justify-center gap-16 px-4 mx-auto">
           <h2 className="text-tertiary max-md:text-3xl max-md:text-center font-caveat text-6xl font-bold">Que tal falar conosco?</h2>
-          <button className="w-fit bg-primary flex items-center justify-center gap-4 rounded hover:bg-opacity-85 duration-300 ease-in-out py-3 px-6">
+          <Link href="/contato" className="w-fit bg-primary flex items-center justify-center gap-4 rounded hover:bg-opacity-85 duration-300 ease-in-out py-3 px-6">
             <span>Entre em contato</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
               <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </button>
+          </Link>
         </div>
       </section>
     </div>
