@@ -20,9 +20,10 @@ const FormContato: FC = () => {
       await sendEmail(data);
       setFeedback("Email enviado com sucesso!");
     } catch (error) {
+      console.error("Erro ao enviar e-mail:", error);
       setFeedback("Ocorreu um erro ao enviar o email. Tente novamente.");
     }
-  }
+  }  
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="w-full bg-tertiary shadow-lg rounded-lg p-8">
