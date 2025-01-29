@@ -4,7 +4,7 @@ import { FC, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { sendEmail } from "@/utils/send-mail";
 
-export type FormData = {
+export type ContatoFormData = {
   nome: string;
   email: string;
   assunto: string;
@@ -12,10 +12,10 @@ export type FormData = {
 };
 
 const FormContato: FC = () => {
-  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<FormData>();
+  const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm<ContatoFormData>();
   const [feedback, setFeedback] = useState<string | null>(null);
 
-  async function onSubmit(data: FormData) {
+  async function onSubmit(data: ContatoFormData) {
     try {
       await sendEmail(data);
       setFeedback("Email enviado com sucesso!");
