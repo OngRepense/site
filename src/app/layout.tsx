@@ -5,11 +5,11 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   // Títulos e descrições serão definidos fora deste exemplo
-  title: "Repense",
-  description: "Descrição repense",
+  title: "ONG Repense - Conectando Pessoas a Oportunidades",
+  description: "Acreditamos no poder da educação e do acesso à informação para transformar vidas. Capacitação, vagas de emprego e conexões que fazem a diferença.",
   openGraph: {
-    title: "Teste Open Graph",
-    description: "Teste Open Graph",
+    title: "ONG Repense - Educação e Oportunidades para Todos",
+    description: "A Repense é uma ONG que busca capacitar pessoas e conectar talentos a oportunidades, promovendo inclusão e transformação social.",
     url: "https://repense.ong.br/", // URL canônica
     type: "website", // Tipo de Open Graph
     images: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         url: "https://repense.ong.br/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Descrição da imagem",
+        alt: "ONG Repense - Educação e Oportunidades para Todos",
       },
     ],
   },

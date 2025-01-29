@@ -1,4 +1,14 @@
 import FormContato from "@components/contato/form-contato";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contato - Repense",
+  description: "Entre em contato com a ONG Repense e saiba como colaborar ou tirar suas dúvidas.",
+  openGraph: {
+    title: "Fale com a ONG Repense",
+    description: "Quer saber mais sobre a Repense? Entre em contato conosco e faça parte dessa transformação.",
+  }
+}
 
 export default function Contato() {
   return (

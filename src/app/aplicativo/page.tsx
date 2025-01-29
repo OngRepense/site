@@ -2,6 +2,15 @@ import { Metadata } from "next";
 import Image from 'next/image';
 import Link from "next/link";
 
+export const metadata: Metadata = {
+  title: "Aplicativo - Repense",
+  description: "Baixe o app da ONG Repense e tenha acesso a vagas de emprego, criação de currículos e conteúdos exclusivos.",
+  openGraph: {
+    title: "Baixe o App Repense",
+    description: "Encontre vagas de emprego, crie seu currículo e acesse conteúdos exclusivos no nosso aplicativo.",
+  }
+};
+
 export default function Aplicativo() {
   return (
     <div>

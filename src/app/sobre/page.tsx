@@ -2,6 +2,15 @@ import { Metadata } from "next";
 import Image from 'next/image';
 import EquipeGrid from "@components/sobre/equipeCard";
 
+export const metadata: Metadata = {
+  title: "Sobre - Repense",
+  description: "Saiba mais sobre a ONG Repense, nossa missão e como trabalhamos para transformar vidas.",
+  openGraph: {
+    title: "Conheça a ONG Repense",
+    description: "A Repense capacita pessoas e conecta talentos a oportunidades para promover inclusão e transformação social.",
+  }
+}
+
 export default function Sobre() {
   return (
     <div>

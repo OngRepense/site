@@ -4,10 +4,10 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Home - Repense",
-  description: "Descrição home repense",
+  description: "Conheça a ONG Repense e descubra como conectamos pessoas a oportunidades por meio da educação e empregabilidade.",
   openGraph: {
-    title: "Open graph title",
-    description: "Open graph descricao"
+    title: "ONG Repense - Educação e Oportunidades",
+    description: "Transformamos vidas através da capacitação profissional e divulgação de vagas de emprego.",
   }
 }
 
