@@ -1,19 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Metadata } from "next";
 import DestaquePost from "@components/blog/destaquePost";
 import RecentePost from "@components/blog/recentePost";
 import CardPost from "@components/blog/cardPost";
-
-export const metadata: Metadata = {
-  title: "Blog - Repense",
-  description: "Fique por dentro das últimas novidades, dicas de empregabilidade e conteúdos inspiradores no blog da ONG Repense.",
-  openGraph: {
-    title: "Blog Repense - Dicas e Novidades",
-    description: "Acesse conteúdos sobre capacitação, mercado de trabalho e histórias inspiradoras no blog da ONG Repense.",
-  }
-}
 
 interface Post {
   title: string;
