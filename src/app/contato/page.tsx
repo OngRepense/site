@@ -1,3 +1,4 @@
+import FormContato from "@components/contato/form-contato";
 
 export default function Contato() {
   return (
@@ -48,7 +49,7 @@ export default function Contato() {
               <a href="#">
                 <div className="socialItem bg-tertiary rounded-lg p-4 hover:bg-primary duration-700 ease-in-out">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M3.47541 2.00008H20.5246C20.9103 1.99699 21.2817 2.14628 21.558 2.41549C21.8342 2.6847 21.9931 3.05208 22 3.43777V20.5557C21.9948 20.9425 21.8367 21.3116 21.5603 21.5822C21.2838 21.8528 20.9114 22.003 20.5246 21.9999H3.47541C3.08914 22.0039 2.71703 21.8546 2.44052 21.5849C2.16401 21.3151 2.00562 20.9468 2 20.5606V3.44269C2.00476 3.05587 2.16277 2.68673 2.43938 2.41627C2.71598 2.14582 3.08858 1.99614 3.47541 2.00008ZM7.61711 5.28399C7.34043 5.09883 7.0151 5 6.68231 5C6.23641 5 5.80875 5.17725 5.4933 5.49279C5.17786 5.80833 5.00043 6.23636 5 6.68282C4.99968 7.01604 5.09808 7.34186 5.28274 7.61908C5.4674 7.89629 5.73003 8.11244 6.03741 8.24017C6.34478 8.36791 6.68309 8.4015 7.00953 8.33668C7.33597 8.27187 7.63588 8.11157 7.87131 7.87606C8.10675 7.64056 8.26713 7.34042 8.33217 7.01363C8.39721 6.68684 8.36399 6.34808 8.23671 6.0402C8.10943 5.73231 7.8938 5.46915 7.61711 5.28399ZM5.23072 9.65223H8.1323V19H5.23072V9.65223ZM12.7338 9.65223H9.95239V19H12.8492V14.3815C12.8492 13.1558 13.1023 11.9751 14.5908 11.9751C16.0792 11.9751 16.0984 13.3692 16.0984 14.452V19H19V13.8665C19 11.3559 18.4553 9.41962 15.5168 9.42603C14.1053 9.42603 13.16 10.2009 12.7723 10.9356H12.7338V9.65223Z" fill="#234B64"/>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M3.47541 2.00008H20.5246C20.9103 1.99699 21.2817 2.14628 21.558 2.41549C21.8342 2.6847 21.9931 3.05208 22 3.43777V20.5557C21.9948 20.9425 21.8367 21.3116 21.5603 21.5822C21.2838 21.8528 20.9114 22.003 20.5246 21.9999H3.47541C3.08914 22.0039 2.71703 21.8546 2.44052 21.5849C2.16401 21.3151 2.00562 20.9468 2 20.5606V3.44269C2.00476 3.05587 2.16277 2.68673 2.43938 2.41627C2.71598 2.14582 3.08858 1.99614 3.47541 2.00008ZM7.61711 5.28399C7.34043 5.09883 7.0151 5 6.68231 5C6.23641 5 5.80875 5.17725 5.4933 5.49279C5.17786 5.80833 5.00043 6.23636 5 6.68282C4.99968 7.01604 5.09808 7.34186 5.28274 7.61908C5.4674 7.89629 5.73003 8.11244 6.03741 8.24017C6.34478 8.36791 6.68309 8.4015 7.00953 8.33668C7.33597 8.27187 7.63588 8.11157 7.87131 7.87606C8.10675 7.64056 8.26713 7.34042 8.33217 7.01363C8.39721 6.68684 8.36399 6.34808 8.23671 6.0402C8.10943 5.73231 7.8938 5.46915 7.61711 5.28399ZM5.23072 9.65223H8.1323V19H5.23072V9.65223ZM12.7338 9.65223H9.95239V19H12.8492V14.3815C12.8492 13.1558 13.1023 11.9751 14.5908 11.9751C16.0792 11.9751 16.0984 13.3692 16.0984 14.452V19H19V13.8665C19 11.3559 18.4553 9.41962 15.5168 9.42603C14.1053 9.42603 13.16 10.2009 12.7723 10.9356H12.7338V9.65223Z" fill="#234B64"/>
                   </svg>
                 </div>
               </a>
@@ -62,51 +63,7 @@ export default function Contato() {
             </div>
           </div>
           <div className="w-full">
-            <form className="w-full bg-tertiary shadow-lg rounded-lg p-8">
-              <div className="mb-4">
-                <label htmlFor="nome" className="block text-secondary font-medium mb-2">Nome</label>
-                <input
-                  type="text"
-                  id="nome"
-                  placeholder="Digite o seu nome"
-                  className="w-full border border-secondary rounded-lg bg-transparent text-secondary placeholder-secondary px-4 py-3"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="email" className="block text-secondary font-medium mb-2">E-mail</label>
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Digite o seu e-mail"
-                  className="w-full border border-secondary rounded-lg bg-transparent text-secondary placeholder-secondary px-4 py-3"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="assunto" className="block text-secondary font-medium mb-2">Assunto</label>
-                <input
-                  type="text"
-                  id="assunto"
-                  placeholder="Qual seria o assunto?"
-                  className="w-full border border-secondary rounded-lg bg-transparent text-secondary placeholder-secondary px-4 py-3"
-                />
-              </div>
-              <div className="mb-4">
-                <label htmlFor="mensagem" className="block text-secondary font-medium mb-2">Mensagem</label>
-                <textarea
-                  id="mensagem"
-                  placeholder="Digite uma mensagem para nós!"
-                  className="w-full border border-secondary rounded-lg bg-transparent text-secondary placeholder-secondary px-4 py-3 min-h-[104px]"
-                ></textarea>
-              </div>
-              <div className="flex justify-end">
-                <button
-                  type="submit"
-                  className="w-full bg-primary text-tertiary rounded-lg px-6 py-3 font-medium hover:opacity-90"
-                >
-                  Enviar
-                </button>
-              </div>
-            </form>
+            <FormContato/>
           </div>
         </div>
       </section>
