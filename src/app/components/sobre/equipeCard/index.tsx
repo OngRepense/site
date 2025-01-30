@@ -73,7 +73,7 @@ const EquipeGrid: React.FC = () => {
     {
       nome: "Hayrana",
       cargo: "Gerente de marketing - Identidade Visual",
-      imageSrc: "/assets/images/equipe/hayrana.png",
+      imageSrc: "/assets/images/equipe/hayrana.jpg",
       altText: "Hayrana - Gerente de marketing - Identidade Visual - Ong Repense",
     },
   ];
