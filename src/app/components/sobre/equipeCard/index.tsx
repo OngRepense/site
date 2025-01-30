@@ -70,6 +70,12 @@ const EquipeGrid: React.FC = () => {
       imageSrc: "/assets/images/equipe/flavioNeves.png",
       altText: "Flávio Neves - Advogado - Ong Repense",
     },
+    {
+      nome: "Hayrana",
+      cargo: "Gerente de marketing / Identidade Visual",
+      imageSrc: "/assets/images/equipe/hayrana.png",
+      altText: "Hayrana - Gerente de marketing / Identidade Visual - Ong Repense",
+    },
   ];
 
   return (
