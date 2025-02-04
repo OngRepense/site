@@ -7,12 +7,16 @@ import { Metadata } from 'next';
 // Geração de parâmetros estáticos
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
+
+  if (!posts) return [];
+
   return posts.map((post) => ({ slug: post.slug }));
 }
 
+
 // Geração de metadados
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params; // Extrai o slug aqui também
+  const { slug } = await params;
   const post = await getBlogPost(slug);
 
   if (!post) {
@@ -31,9 +35,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
+
 // Componente da página
 export default async function PostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params; // Extrai o slug aqui
+  const { slug } = await params;
   const post = await getBlogPost(slug);
 
   if (!post) notFound();
