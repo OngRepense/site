@@ -29,9 +29,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-// Page component
-export default async function PostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+// Componente da página
+export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const post = await getBlogPost(slug);
 
   if (!post) notFound();
