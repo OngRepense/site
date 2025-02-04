@@ -9,8 +9,12 @@ export async function generateStaticParams() {
   return posts?.map((post) => ({ slug: post.slug })) || [];
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
   const post = await getBlogPost(slug);
 
   if (!post) {
@@ -29,8 +33,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-// Componente da página
-export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const post = await getBlogPost(slug);
 
