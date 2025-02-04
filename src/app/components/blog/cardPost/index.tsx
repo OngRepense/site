@@ -43,13 +43,6 @@ const CardPost: React.FC<CardPostProps> = ({
           </svg>
           <p className="text-xs text-secondary">{date}</p>
         </div>
-        <div className="tempoLeituraPost flex items-center gap-1">
-          <svg className="w-3 h-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 12" fill="none">
-            <path d="M6.8 0C3.49 0 0.8 2.69 0.8 6C0.8 9.31 3.49 12 6.8 12C10.11 12 12.8 9.31 12.8 6C12.8 2.69 10.11 0 6.8 0ZM6.8 10.8C4.15 10.8 2 8.65 2 6C2 3.35 4.15 1.2 6.8 1.2C9.45 1.2 11.6 3.35 11.6 6C11.6 8.65 9.45 10.8 6.8 10.8Z" fill="#234B64"/>
-            <path d="M7.4 3H6.2V6.25L8.176 8.224L9.024 7.376L7.4 5.752V3Z" fill="#234B64"/>
-          </svg>
-          <p className="text-xs text-secondary">{readingTime}</p>
-        </div>
       </div>
       <p className="resumoPost text-base text-secondary">{summary}</p>
     </div>

@@ -30,7 +30,8 @@ export async function getBlogPosts() {
       category: item.fields.category || 'Geral',
       image: item.fields.image ? item.fields.image.fields.file.url : null,
       publishedDate: item.fields.publishedDate || new Date().toISOString(),
-      author: item.fields.author || 'Autor desconhecido'
+      author: item.fields.author || 'Autor desconhecido',
+      destaque: item.fields.destaque || false, 
     }));
   } catch (error) {
     console.error('Erro ao buscar posts:', error);
@@ -58,7 +59,8 @@ export async function getBlogPost(slug) {
       category: item.fields.category || 'Geral',
       image: item.fields.image ? formatImageUrl(item.fields.image.fields.file.url) : null,
       publishedDate: item.fields.publishedDate || new Date().toISOString(),
-      author: item.fields.author || 'Autor desconhecido'
+      author: item.fields.author || 'Autor desconhecido',
+      destaque: item.fields.destaque || false, 
     };
   } catch (error) {
     console.error(`Erro ao buscar post ${slug}:`, error);

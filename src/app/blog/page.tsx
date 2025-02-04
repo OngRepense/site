@@ -1,63 +1,73 @@
-// src/app/blog/page.tsx
 import { getBlogPosts } from '@/lib/contentful';
 import CardPost from '@components/blog/cardPost';
+import DestaquePost from '@components/blog/destaquePost';
+import RecentePost from '@components/blog/recentePost';
 import Link from 'next/link';
+import FilteredPostsGrid from '@components/blog/blogFilter';
 
 export default async function Blog() {
   const contentfulPosts = await getBlogPosts();
 
-  // Mapeamento corrigido com fallbacks
   const posts = contentfulPosts.map(post => ({
     title: post.title || 'Sem título',
-    slug: post.slug || 'sem-slug', // Fallback para slug
+    slug: post.slug || 'sem-slug',
     date: new Date(post.publishedDate).toLocaleDateString('pt-BR', {
       day: '2-digit',
       month: 'long',
       year: 'numeric'
     }) || 'Data não disponível',
     summary: post.content?.substring(0, 150) + '...' || 'Resumo não disponível',
-    category: post.category || 'Geral', // Usando o campo correto
+    category: post.category || 'Geral',
     imageSrc: post.image ? `https:${post.image}` : '/fallback-image.jpg',
-    imageAlt: post.title || 'Imagem do post'
+    imageAlt: post.title || 'Imagem do post',
+    destaque: post.destaque || false
   }));
 
-  // Função para obter categorias únicas
-  const getCategories = (posts: any[]) => {
-    return Array.from(new Set(posts.map((post) => post.category)));
-  };
-
-  const categories = getCategories(posts);
+  const postsDestaque = posts.filter(post => post.destaque).slice(0, 2);
+  const postsRecentes = posts.filter(post => !post.destaque).slice(0, 3);
 
   return (
     <div>
+      {/* Seção de Destaque e Recentes*/}
       <section className="bannerHome max-md:pb-16 py-32">
-        {/* Seção de Destaques e Recentes mantida sem alterações */}
-      </section>
-
-      <section className="blogHome max-md:py-16 bg-tertiary py-32">
-        <div className="innerWidth max-w-8xl flex flex-col items-center justify-center gap-16 px-4 mx-auto">
-          <h2 className="text-primary max-md:text-3xl max-md:text-center font-caveat text-6xl text-secondary font-bold">
-            Nosso blog
-          </h2>
-
-          <div className="w-full flex flex-col gap-8">
-            {/* Filtros (mantido para implementação futura) */}
-            
-            {/* Grid de Posts com Links */}
-            <div className="gridPosts grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-              {posts.map((post, index) => (
+        <div className="innerWidth max-lg:flex-col max-md:gap-8 max-w-8xl flex items-center justify-between items-stretch gap-16 px-4 mx-auto">
+          <div className="postsEmDestaque w-full flex flex-col gap-6">
+            <h2 className="text-primary max-md:text-5xl font-caveat text-6xl font-bold">Destaques</h2>
+            <div className="w-full h-full flex flex-col gap-6">
+              {postsDestaque.map((post, index) => (
+                <Link 
+                  key={index} 
+                  href={`/post/${post.slug}`} 
+                  className="flex w-full h-full hover:opacity-90 transition-opacity"
+                >
+                  <DestaquePost 
+                    title={post.title} 
+                    date={post.date}
+                    slug={post.slug} 
+                    summary={post.summary}
+                    imageSrc={post.imageSrc} 
+                    imageAlt={post.imageAlt} 
+                  />
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div className="postsRecentes lg:max-w-[494px] w-full flex flex-col gap-6">
+            <h2 className="text-tertiary max-md:text-5xl font-caveat text-6xl font-bold">Recentes</h2>
+            <div className="w-full h-full flex flex-col gap-6">
+              {postsRecentes.map((post, index) => (
                 <Link 
                   key={index} 
                   href={`/post/${post.slug}`} 
                   className="block hover:opacity-90 transition-opacity"
                 >
-                  <CardPost
-                    title={post.title}
-                    date={post.date}
+                  <RecentePost 
+                    title={post.title} 
+                    date={post.date} 
+                    slug={post.slug} 
                     summary={post.summary}
-                    category={post.category}
-                    imageSrc={post.imageSrc}
-                    imageAlt={post.imageAlt}
+                    imageSrc={post.imageSrc} 
+                    imageAlt={post.imageAlt} 
                   />
                 </Link>
               ))}
@@ -65,6 +75,8 @@ export default async function Blog() {
           </div>
         </div>
       </section>
+      {/* Grid de Todos os Posts */}
+      <FilteredPostsGrid posts={posts} />
     </div>
   );
 }
