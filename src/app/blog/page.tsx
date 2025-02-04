@@ -41,7 +41,6 @@ export default async function Blog() {
                   <DestaquePost 
                     title={post.title} 
                     date={post.date}
-                    slug={post.slug} 
                     summary={post.summary}
                     imageSrc={post.imageSrc} 
                     imageAlt={post.imageAlt} 
@@ -62,7 +61,6 @@ export default async function Blog() {
                   <RecentePost 
                     title={post.title} 
                     date={post.date} 
-                    slug={post.slug} 
                     summary={post.summary}
                     imageSrc={post.imageSrc} 
                     imageAlt={post.imageAlt} 
