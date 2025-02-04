@@ -12,4 +12,5 @@ declare module '@/lib/contentful' {
   }
   
   export function getBlogPosts(): Promise<BlogPost[]>;
+  export function getBlogPost(slug: string): Promise<BlogPost | null>;
 }
