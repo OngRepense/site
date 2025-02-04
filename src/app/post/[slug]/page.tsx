@@ -2,15 +2,18 @@ import { getBlogPost, getBlogPosts } from '@/lib/contentful';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
-// Geração de parâmetros estáticos para a página
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-// Geração de metadados
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string }
+}): Promise<Metadata> {
   const post = await getBlogPost(params.slug);
 
   if (!post) return {
@@ -27,8 +30,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-// Componente da página do post
-export default async function PostPage({ params }: { params: { slug: string } }) {
+export default async function PostPage({
+  params,
+}: {
+  params: { slug: string }
+}) {
   const post = await getBlogPost(params.slug);
 
   if (!post) notFound();
