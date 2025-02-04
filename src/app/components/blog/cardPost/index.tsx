@@ -8,6 +8,7 @@ interface CardPostProps {
   imageSrc: string;
   imageAlt: string;
   category: string;
+  slug: string;
 }
 
 const CardPost: React.FC<CardPostProps> = ({ 
@@ -22,11 +23,11 @@ const CardPost: React.FC<CardPostProps> = ({
   <div className="cardPost w-full md:max-w-[442px] w-full flex flex-col gap-6">
     <div className="imagemPost max-md:max-h-[140px] w-full rounded-md overflow-hidden">
       <Image 
-        className="max-md:max-h-[140px] w-full h-full object-cover" 
+        className="max-md:max-h-[140px] max-h-[200px] min-h-[200px] w-full h-auto object-cover" 
         src={imageSrc} 
         alt={imageAlt} 
-        width={256} 
-        height={156} 
+        width={1920} 
+        height={1080} 
         loading="lazy" 
       />
     </div>
