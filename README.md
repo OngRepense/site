@@ -1,4 +1,4 @@
-####@ Getting Started3
+### Getting Started3
 
 First, run the development server:
 
