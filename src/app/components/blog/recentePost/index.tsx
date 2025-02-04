@@ -3,13 +3,12 @@ import Image from "next/image";
 interface RecentePostProps {
   title: string;
   date: string;
-  readingTime: string;
   summary: string;
   imageSrc: string;
   imageAlt: string;
 }
 
-const RecentePost: React.FC<RecentePostProps> = ({ title, date, readingTime, summary, imageSrc, imageAlt }) => (
+const RecentePost: React.FC<RecentePostProps> = ({ title, date, summary, imageSrc, imageAlt }) => (
     <div className="cardPostRecente w-full h-full flex max-md:flex-col gap-6 bg-tertiary rounded-lg p-4">
       <div className="imagemPost max-md:max-w-[100%] max-md:max-h-[80px] max-w-[128px] w-full h-auto rounded-md overflow-hidden">
         <Image className="max-md:max-w-[100%] max-md:max-h-[80px] max-w-[128px] w-full h-full object-cover" src={imageSrc} alt={imageAlt} width={1920} height={1080} loading="lazy" />

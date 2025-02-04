@@ -1,4 +1,4 @@
-const contentful = require('contentful');
+import * as contentful from 'contentful';
 
 // Função auxiliar para formatar URLs
 function formatImageUrl(url) {

@@ -3,7 +3,6 @@ import Image from "next/image";
 interface CardPostProps {
   title: string;
   date: string;
-  readingTime: string;
   summary: string;
   imageSrc: string;
   imageAlt: string;
@@ -14,7 +13,6 @@ interface CardPostProps {
 const CardPost: React.FC<CardPostProps> = ({ 
   title, 
   date, 
-  readingTime, 
   summary, 
   imageSrc, 
   imageAlt, 

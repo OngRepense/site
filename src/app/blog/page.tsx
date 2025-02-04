@@ -1,5 +1,4 @@
 import { getBlogPosts } from '@/lib/contentful';
-import CardPost from '@components/blog/cardPost';
 import DestaquePost from '@components/blog/destaquePost';
 import RecentePost from '@components/blog/recentePost';
 import Link from 'next/link';

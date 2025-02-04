@@ -3,7 +3,6 @@ import Image from "next/image";
 interface DestaquePostProps {
   title: string;
   date: string;
-  readingTime: string;
   summary: string;
   imageSrc: string;
   imageAlt: string;
@@ -12,7 +11,6 @@ interface DestaquePostProps {
 const DestaquePost: React.FC<DestaquePostProps> = ({
   title,
   date,
-  readingTime,
   summary,
   imageSrc,
   imageAlt,
