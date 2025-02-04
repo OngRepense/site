@@ -3,11 +3,13 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     domains: [
-      'images.ctfassets.net', // Domínio principal
-      'ctfassets.net' // Alternativa caso precise
+      'images.ctfassets.net',
+      'ctfassets.net'
     ],
   },
-  // Outras configurações podem ficar aqui...
+  experimental: {
+    appDir: true
+  }
 };
 
 export default nextConfig;

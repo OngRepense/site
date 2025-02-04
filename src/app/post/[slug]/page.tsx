@@ -4,38 +4,37 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
 
+// Geração de parâmetros estáticos
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string }
-}): Promise<Metadata> {
-  const post = await getBlogPost(params.slug);
+// Geração de metadados
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = params; // Extrai o slug aqui também
+  const post = await getBlogPost(slug);
 
-  if (!post) return {
-    title: 'Post não encontrado',
-    description: 'O post solicitado não foi encontrado',
-  };
+  if (!post) {
+    return {
+      title: 'Post não encontrado',
+      description: 'O post solicitado não foi encontrado',
+    };
+  }
 
   return {
     title: post.title,
-    description: post.content?.substring(0, 160) || 'Conteúdo do post não disponível',
+    description: post.content?.substring(0, 160) || 'Descrição padrão',
     openGraph: {
-      images: post.image ? [post.image] : [],
+      images: post.image ? [{ url: post.image }] : [],
     },
   };
 }
 
-export default async function PostPage({
-  params,
-}: {
-  params: { slug: string }
-}) {
-  const post = await getBlogPost(params.slug);
+// Componente da página
+export default async function PostPage({ params }: { params: { slug: string } }) {
+  const { slug } = params; // Extrai o slug aqui
+  const post = await getBlogPost(slug);
 
   if (!post) notFound();
 

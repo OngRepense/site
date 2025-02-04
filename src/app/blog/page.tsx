@@ -27,7 +27,6 @@ export default async function Blog() {
 
   return (
     <div>
-      {/* Seção de Destaque e Recentes*/}
       <section className="bannerHome max-md:pb-16 py-32">
         <div className="innerWidth max-lg:flex-col max-md:gap-8 max-w-8xl flex items-center justify-between items-stretch gap-16 px-4 mx-auto">
           <div className="postsEmDestaque w-full flex flex-col gap-6">
@@ -74,7 +73,6 @@ export default async function Blog() {
           </div>
         </div>
       </section>
-      {/* Grid de Todos os Posts */}
       <FilteredPostsGrid posts={posts} />
     </div>
   );
