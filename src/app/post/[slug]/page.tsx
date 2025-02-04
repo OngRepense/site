@@ -6,7 +6,6 @@ import Link from 'next/link';
 // Geração de parâmetros estáticos para a página
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
-  // Aqui o Next.js espera uma estrutura específica para o slug
   return posts.map((post) => ({ slug: post.slug }));
 }
 
@@ -41,7 +40,7 @@ export default async function PostPage({ params }: { params: { slug: string } })
   });
 
   return (
-    <article className="blogHome max-md:py-16  py-32">
+    <article className="blogHome max-md:py-16 py-32">
       <div className="innerWidth max-w-8xl flex flex-col items-center justify-center gap-16 px-4 mx-auto">
         <Link href="/blog" className="text-primary hover:underline mb-8 inline-block">
           &larr; Voltar ao Blog
