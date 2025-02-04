@@ -7,9 +7,6 @@ const nextConfig: NextConfig = {
       'ctfassets.net'
     ],
   },
-  experimental: {
-    appDir: true
-  }
 };
 
 export default nextConfig;
