@@ -74,7 +74,6 @@ const FilteredPostsGrid = ({ posts }: FilteredPostsGridProps) => {
                 imageSrc={post.imageSrc}
                 imageAlt={post.imageAlt}
                 slug={post.slug}
-                readingTime="" // Adicione este campo se necessário
               />
             </Link>
           ))}
