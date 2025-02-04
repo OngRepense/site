@@ -4,19 +4,13 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { Metadata } from 'next';
 
-// Geração de parâmetros estáticos
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
-
-  if (!posts) return [];
-
-  return posts.map((post) => ({ slug: post.slug }));
+  return posts?.map((post) => ({ slug: post.slug })) || [];
 }
 
-
-// Geração de metadados
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug } = params;
   const post = await getBlogPost(slug);
 
   if (!post) {
@@ -35,10 +29,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-
-// Componente da página
+// Page component
 export default async function PostPage({ params }: { params: { slug: string } }) {
-  const { slug } = await params;
+  const { slug } = params;
   const post = await getBlogPost(slug);
 
   if (!post) notFound();
@@ -58,7 +51,6 @@ export default async function PostPage({ params }: { params: { slug: string } })
 
         <header className="mb-12">
           <h1 className="text-4xl font-bold text-primary mb-4">{post.title}</h1>
-          
           <div className="flex items-center gap-4 text-sm">
             {post.author && <span className="font-medium">{post.author}</span>}
             <time dateTime={post.publishedDate}>{formattedDate}</time>

@@ -1,0 +1,146 @@
+{
+    "name": "blogPost",
+    "description": "",
+    "displayField": "title",
+    "fields": [
+      {
+        "id": "title",
+        "name": "title",
+        "type": "Symbol",
+        "localized": false,
+        "required": true,
+        "validations": [
+          {
+            "unique": true
+          }
+        ],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "slug",
+        "name": "slug",
+        "type": "Symbol",
+        "localized": false,
+        "required": true,
+        "validations": [
+          {
+            "unique": true
+          }
+        ],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "category",
+        "name": "category",
+        "type": "Symbol",
+        "localized": false,
+        "required": true,
+        "validations": [],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "content",
+        "name": "content ",
+        "type": "Text",
+        "localized": false,
+        "required": false,
+        "validations": [],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "image",
+        "name": "image ",
+        "type": "Link",
+        "localized": false,
+        "required": false,
+        "validations": [],
+        "disabled": false,
+        "omitted": false,
+        "linkType": "Asset"
+      },
+      {
+        "id": "publishedDate",
+        "name": "publishedDate",
+        "type": "Date",
+        "localized": false,
+        "required": false,
+        "validations": [],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "author",
+        "name": "author ",
+        "type": "Symbol",
+        "localized": false,
+        "required": false,
+        "validations": [],
+        "disabled": false,
+        "omitted": false
+      },
+      {
+        "id": "destaque",
+        "name": "destaque",
+        "type": "Boolean",
+        "localized": false,
+        "required": true,
+        "validations": [],
+        "defaultValue": {
+          "en-US": false
+        },
+        "disabled": false,
+        "omitted": false
+      }
+    ],
+    "sys": {
+      "space": {
+        "sys": {
+          "type": "Link",
+          "linkType": "Space",
+          "id": "1lxsy3eylspx"
+        }
+      },
+      "id": "blogPost",
+      "type": "ContentType",
+      "createdAt": "2025-01-30T21:33:19.284Z",
+      "updatedAt": "2025-02-04T21:19:07.731Z",
+      "environment": {
+        "sys": {
+          "id": "master",
+          "type": "Link",
+          "linkType": "Environment"
+        }
+      },
+      "publishedVersion": 23,
+      "publishedAt": "2025-02-04T21:19:07.731Z",
+      "firstPublishedAt": "2025-01-30T21:33:19.702Z",
+      "createdBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "3t0mcQKn2Ks1ed2su10fvG"
+        }
+      },
+      "updatedBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "3t0mcQKn2Ks1ed2su10fvG"
+        }
+      },
+      "publishedCounter": 12,
+      "version": 24,
+      "publishedBy": {
+        "sys": {
+          "type": "Link",
+          "linkType": "User",
+          "id": "3t0mcQKn2Ks1ed2su10fvG"
+        }
+      },
+      "urn": "crn:contentful:::content:spaces/1lxsy3eylspx/environments/master/content_types/blogPost"
+    }
+  }
