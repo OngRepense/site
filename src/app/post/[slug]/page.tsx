@@ -3,17 +3,20 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 
+// Geração de parâmetros estáticos para a página
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
+  // Aqui o Next.js espera uma estrutura específica para o slug
   return posts.map((post) => ({ slug: post.slug }));
 }
 
+// Geração de metadados
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const post = await getBlogPost(params.slug);
-  
+
   if (!post) return {
     title: 'Post não encontrado',
-    description: 'O post solicitado não foi encontrado'
+    description: 'O post solicitado não foi encontrado',
   };
 
   return {
@@ -25,6 +28,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
+// Componente da página do post
 export default async function PostPage({ params }: { params: { slug: string } }) {
   const post = await getBlogPost(params.slug);
 
@@ -33,48 +37,48 @@ export default async function PostPage({ params }: { params: { slug: string } })
   const formattedDate = new Date(post.publishedDate).toLocaleDateString('pt-BR', {
     day: '2-digit',
     month: 'long',
-    year: 'numeric'
+    year: 'numeric',
   });
 
   return (
     <article className="blogHome max-md:py-16  py-32">
-        <div className="innerWidth max-w-8xl flex flex-col items-center justify-center gap-16 px-4 mx-auto">
-            <Link href="/blog" className="text-primary hover:underline mb-8 inline-block">
-                &larr; Voltar ao Blog
-            </Link>
+      <div className="innerWidth max-w-8xl flex flex-col items-center justify-center gap-16 px-4 mx-auto">
+        <Link href="/blog" className="text-primary hover:underline mb-8 inline-block">
+          &larr; Voltar ao Blog
+        </Link>
 
-            <header className="mb-12">
-                <h1 className="text-4xl font-bold text-primary mb-4">{post.title}</h1>
-                
-                <div className="flex items-center gap-4 text-sm">
-                {post.author && <span className="font-medium">{post.author}</span>}
-                <time dateTime={post.publishedDate}>{formattedDate}</time>
-                {post.category && (
-                    <span className="bg-primary text-white px-2 py-1 rounded-sm text-xs">
-                    {post.category}
-                    </span>
-                )}
-                </div>
-            </header>
-
-            {post.image && (
-                <div className="relative w-full h-96 mb-12 rounded-lg overflow-hidden">
-                <Image
-                    src={post.image}
-                    alt={post.title}
-                    width={1920} 
-                    height={1080} 
-                    loading="lazy" 
-                />
-                </div>
+        <header className="mb-12">
+          <h1 className="text-4xl font-bold text-primary mb-4">{post.title}</h1>
+          
+          <div className="flex items-center gap-4 text-sm">
+            {post.author && <span className="font-medium">{post.author}</span>}
+            <time dateTime={post.publishedDate}>{formattedDate}</time>
+            {post.category && (
+              <span className="bg-primary text-white px-2 py-1 rounded-sm text-xs">
+                {post.category}
+              </span>
             )}
+          </div>
+        </header>
 
-            <div className="prose max-w-none">
-                {post.content && (
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
-                )}
-            </div>
+        {post.image && (
+          <div className="relative w-full h-96 mb-12 rounded-lg overflow-hidden">
+            <Image
+              src={post.image}
+              alt={post.title}
+              width={1920}
+              height={1080}
+              loading="lazy"
+            />
+          </div>
+        )}
+
+        <div className="prose max-w-none">
+          {post.content && (
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          )}
         </div>
+      </div>
     </article>
   );
 }
