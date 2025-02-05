@@ -1,4 +1,5 @@
 import * as contentful from 'contentful';
+import slugify from 'slugify';
 
 // Função auxiliar para formatar URLs
 function formatImageUrl(url) {
@@ -41,9 +42,11 @@ export async function getBlogPosts() {
 
 export async function getBlogPost(slug) {
   try {
+    const normalizedSlug = slugify(slug, { lower: true, strict: true });
+
     const entries = await client.getEntries({
       content_type: 'blogPost',
-      'fields.slug': slug,
+      'fields.slug': normalizedSlug,
       include: 2,
       limit: 1
     });
@@ -54,7 +57,7 @@ export async function getBlogPost(slug) {
     return {
       id: item.sys.id,
       title: item.fields.title || 'Sem título',
-      slug: item.fields.slug || 'sem-slug',
+      slug: normalizedSlug,
       content: item.fields.content || '',
       category: item.fields.category || 'Geral',
       image: item.fields.image ? formatImageUrl(item.fields.image.fields.file.url) : null,

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import CardPost from '@components/blog/cardPost';
 import Link from 'next/link';
+import slugify from 'slugify';
 
 interface FilteredPostsGridProps {
   posts: Array<{
@@ -63,7 +64,7 @@ const FilteredPostsGrid = ({ posts }: FilteredPostsGridProps) => {
           {filteredPosts.map((post, index) => (
             <Link 
               key={index} 
-              href={`/post/${post.slug}`} 
+              href={`/post/${slugify(post.slug, { lower: true, strict: true })}`} 
               className="block hover:opacity-90 transition-opacity"
             >
               <CardPost

@@ -15,7 +15,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getBlogPost(slug);
+  const decodedSlug = decodeURIComponent(slug); // Decodifica caracteres especiais
+  const post = await getBlogPost(decodedSlug); 
 
   if (!post) {
     return {
@@ -39,7 +40,8 @@ export default async function PostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await getBlogPost(slug);
+  const decodedSlug = decodeURIComponent(slug); // Decodifica caracteres especiais
+  const post = await getBlogPost(decodedSlug);
 
   if (!post) notFound();
 

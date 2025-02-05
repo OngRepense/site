@@ -3,6 +3,7 @@ import DestaquePost from '@components/blog/destaquePost';
 import RecentePost from '@components/blog/recentePost';
 import Link from 'next/link';
 import FilteredPostsGrid from '@components/blog/blogFilter';
+import slugify from 'slugify';
 
 export default async function Blog() {
   const contentfulPosts = await getBlogPosts();
@@ -35,7 +36,7 @@ export default async function Blog() {
               {postsDestaque.map((post, index) => (
                 <Link 
                   key={index} 
-                  href={`/post/${post.slug}`} 
+                  href={`/post/${slugify(post.slug, { lower: true, strict: true })}`} 
                   className="flex w-full h-full hover:opacity-90 transition-opacity"
                 >
                   <DestaquePost 
@@ -55,7 +56,7 @@ export default async function Blog() {
               {postsRecentes.map((post, index) => (
                 <Link 
                   key={index} 
-                  href={`/post/${post.slug}`} 
+                  href={`/post/${slugify(post.slug, { lower: true, strict: true })}`} 
                   className="block hover:opacity-90 transition-opacity"
                 >
                   <RecentePost 
