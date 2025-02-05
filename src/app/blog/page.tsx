@@ -5,6 +5,8 @@ import Link from 'next/link';
 import FilteredPostsGrid from '@components/blog/blogFilter';
 import slugify from 'slugify';
 
+export const revalidate = 60; // Atualiza a cada 60 segundos
+
 export default async function Blog() {
   const contentfulPosts = await getBlogPosts();
 
