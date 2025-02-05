@@ -24,7 +24,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="fixed w-full">
+    <header className="fixed w-full z-[999]">
       <nav className="bg-secondary w-full z-20 top-0 border-b border-borderBlue">
         <div className="innerWidth max-w-8xl flex items-center justify-between mx-auto p-4">
           <Link href="/" className="max-w-[132px]">
