@@ -76,6 +76,12 @@ const EquipeGrid: React.FC = () => {
       imageSrc: "/assets/images/equipe/hayrana.jpg",
       altText: "Hayrana - Gerente de marketing - Identidade Visual - Ong Repense",
     },
+    {
+      nome: "Elane",
+      cargo: "Coordenação Pedagogica",
+      imageSrc: "/assets/images/equipe/hayrana.jpg",
+      altText: "Elane - Coordenação Pedagogica",
+    },
   ];
 
   return (
