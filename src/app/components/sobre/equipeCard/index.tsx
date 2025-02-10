@@ -42,9 +42,9 @@ const EquipeGrid: React.FC = () => {
     },
     {
       nome: "Sini Chaves",
-      cargo: "Gestor de Tráfego",
+      cargo: "Assessoria de Imprensa",
       imageSrc: "/assets/images/equipe/siniChaves.png",
-      altText: "Sini Chaves - Gestor de Tráfego - Ong Repense",
+      altText: "Sini Chaves - Assessoria de Imprensa - Ong Repense",
     },
     {
       nome: "Viktor Santos",
