@@ -36,9 +36,9 @@ const EquipeGrid: React.FC = () => {
     },
     {
       nome: "Juliana Santos",
-      cargo: "Vice Presidente",
+      cargo: "Gerente Comercial",
       imageSrc: "/assets/images/equipe/julianaSantos.png",
-      altText: "Juliana Santos - Vice Presidente - Ong Repense",
+      altText: "Juliana Santos - Gerente Comercial - Ong Repense",
     },
     {
       nome: "Sini Chaves",
