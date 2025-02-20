@@ -40,7 +40,7 @@ export default function Contato() {
                 </div>
                 <div>
                   <h3 className="max-md:text-base text-primary text-2xl font-bold">E-mail</h3>
-                  <p className="max-md:text-sm text-base">contato@repense.com.br</p>
+                  <p className="max-md:text-sm text-base">repenseong2@gmail.com</p>
                 </div>
               </div>
               <div className="contatoItem w-full flex gap-6">
