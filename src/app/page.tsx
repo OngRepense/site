@@ -152,13 +152,13 @@ export default function Home() {
             >
                <CarouselContent className='md:flex md:justify-center'>
                 <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                  <div className="parceriaItem w-full bg-[rgba(240,125,0,0.50)] flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
+                  <div className="parceriaItem w-full bg-white flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
                     <Image className="max-w-[100px] max-h-[100px] w-full" src="/assets/images/googleIcon.png" alt="Parceria" width={100} height={100} loading="lazy" />
                   </div>
                 </CarouselItem>
                 <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                  <div className="parceriaItem w-full bg-[rgba(240,125,0,0.50)] max-h-[260px] h-full flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
-                    <Image className="max-h-[72px] w-full h-full" src="/assets/icons/fiapLogo.svg" alt="Parceria" width={100} height={100} loading="lazy" />
+                  <div className="parceriaItem w-full bg-white max-h-[260px] h-full flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
+                    <Image className="max-h-[72px] w-full h-full" src="/assets/icons/fiap-logo.svg" alt="FIAP" width={100} height={100} loading="lazy" />
                   </div>
                 </CarouselItem>
               </CarouselContent>
