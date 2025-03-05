@@ -110,7 +110,7 @@ export default function Home() {
                   <h3 className="max-md:text-2xl text-3xl font-bold font-caveat">Gerador de curriculo Repense</h3>
                   <p className="max-md:text-xs text-base">Tenha tudo na palma da sua mão! Acompanhe vagas de emprego, crie seu currículo profissional e fique por dentro de dicas e novidades com o nosso blog.</p>
                 </div>
-                <Link href="#" className="flex items-center gap-2">
+                <Link href="https://repensecv.repense.ong.br/" target="_blank" className="flex items-center gap-2">
                   <span className="font-medium">Saiba mais</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="none">
                     <path d="M4.66699 11.3337L11.3337 4.66699M11.3337 4.66699H4.66699M11.3337 4.66699V11.3337" stroke="#FFF1C3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
