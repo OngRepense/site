@@ -152,8 +152,8 @@ export default function Home() {
             >
                <CarouselContent className='md:flex md:justify-center'>
                 <CarouselItem className="md:basis-1/2 lg:basis-1/3">
-                  <div className="parceriaItem w-full bg-white flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
-                    <Image className="max-w-[100px] max-h-[100px] w-full" src="/assets/images/googleIcon.png" alt="Parceria" width={100} height={100} loading="lazy" />
+                  <div className="parceriaItem w-full bg-white max-h-[260px] h-full flex items-center justify-center max-md:rounded-lg md:rounded-3xl py-20 px-8">
+                    <Image className="max-h-[186px] w-auto h-full" src="/assets/images/google-ad-grants.png" alt="Parceria" width={100} height={100} loading="lazy" />
                   </div>
                 </CarouselItem>
                 <CarouselItem className="md:basis-1/2 lg:basis-1/3">
